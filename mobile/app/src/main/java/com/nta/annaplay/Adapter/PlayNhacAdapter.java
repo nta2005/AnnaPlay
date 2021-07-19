@@ -1,7 +1,6 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.BaiHatActivity;
-import com.nta.annaplay.Activity.PlayNhacActivity;
-import com.nta.annaplay.Fragment.Fragment_Play_Danh_Sach_Cac_Bai_Hat;
-import com.nta.annaplay.Model.BaiHat;
+import com.nta.annaplay.model.BaiHat;
 import com.nta.annaplay.R;
 
 import java.util.ArrayList;

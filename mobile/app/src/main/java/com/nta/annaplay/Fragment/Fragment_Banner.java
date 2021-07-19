@@ -1,4 +1,4 @@
-package com.nta.annaplay.Fragment;
+package com.nta.annaplay.fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,15 +11,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.nta.annaplay.Adapter.BannerAdapter;
-import com.nta.annaplay.Model.QuangCao;
+import com.nta.annaplay.adapter.BannerAdapter;
+import com.nta.annaplay.model.QuangCao;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//import me.relex.circleindicator.CircleIndicator;
 import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
 import retrofit2.Callback;

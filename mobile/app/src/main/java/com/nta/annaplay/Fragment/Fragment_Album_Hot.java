@@ -1,4 +1,4 @@
-package com.nta.annaplay.Fragment;
+package com.nta.annaplay.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +13,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.AlbumActivity;
-import com.nta.annaplay.Adapter.AlbumAdapter;
-import com.nta.annaplay.Model.Album;
+import com.nta.annaplay.activity.AlbumActivity;
+import com.nta.annaplay.adapter.AlbumAdapter;
+import com.nta.annaplay.model.Album;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 
 import java.util.ArrayList;
 import java.util.List;

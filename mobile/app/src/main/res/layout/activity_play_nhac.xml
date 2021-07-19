@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/custom_background_playnhac"
-    tools:context=".Activity.PlayNhacActivity">
+    tools:context=".activity.PlayNhacActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_playnhac"

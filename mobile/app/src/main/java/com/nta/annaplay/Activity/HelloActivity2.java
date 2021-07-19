@@ -1,4 +1,4 @@
-package com.nta.annaplay.Activity;
+package com.nta.annaplay.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

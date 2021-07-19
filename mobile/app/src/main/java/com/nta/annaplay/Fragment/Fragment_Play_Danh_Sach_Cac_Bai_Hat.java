@@ -1,4 +1,4 @@
-package com.nta.annaplay.Fragment;
+package com.nta.annaplay.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.PlayNhacActivity;
-import com.nta.annaplay.Adapter.PlayNhacAdapter;
+import com.nta.annaplay.activity.PlayNhacActivity;
+import com.nta.annaplay.adapter.PlayNhacAdapter;
 import com.nta.annaplay.R;
 
 public class Fragment_Play_Danh_Sach_Cac_Bai_Hat extends Fragment {

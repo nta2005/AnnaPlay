@@ -1,11 +1,10 @@
-package com.nta.annaplay.Activity;
+package com.nta.annaplay.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
@@ -19,10 +18,10 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.nta.annaplay.Adapter.ViewPager_PlaylistNhac;
-import com.nta.annaplay.Fragment.Fragment_Dia_Nhac;
-import com.nta.annaplay.Fragment.Fragment_Play_Danh_Sach_Cac_Bai_Hat;
-import com.nta.annaplay.Model.BaiHat;
+import com.nta.annaplay.adapter.ViewPager_PlaylistNhac;
+import com.nta.annaplay.fragment.Fragment_Dia_Nhac;
+import com.nta.annaplay.fragment.Fragment_Play_Danh_Sach_Cac_Bai_Hat;
+import com.nta.annaplay.model.BaiHat;
 import com.nta.annaplay.R;
 
 import java.io.IOException;

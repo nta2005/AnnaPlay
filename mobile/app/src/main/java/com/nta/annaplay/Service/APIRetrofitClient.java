@@ -1,4 +1,4 @@
-package com.nta.annaplay.Service;
+package com.nta.annaplay.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

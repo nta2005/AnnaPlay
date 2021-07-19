@@ -1,5 +1,6 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 //Apdater thiết kế giao diện Album:
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,14 +12,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.BaiHatActivity;
-import com.nta.annaplay.Model.Album;
+import com.nta.annaplay.activity.BaiHatActivity;
+import com.nta.annaplay.model.Album;
 import com.nta.annaplay.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder>{
+public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
     Context context;
     ArrayList<Album> albumArrayList;
 
@@ -31,7 +32,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.dong_album,parent,false);
+        View view = inflater.inflate(R.layout.dong_album, parent, false);
         return new ViewHolder(view);
     }
 
@@ -45,12 +46,16 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return albumArrayList.size();
+        if (albumArrayList == null)
+            return 0;
+        else
+            return albumArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imghinhalbum;
-        TextView txttenalbum,txtcasialbum;
+        TextView txttenalbum, txtcasialbum;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imghinhalbum = itemView.findViewById(R.id.imageviewalbum);
@@ -60,7 +65,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, BaiHatActivity.class);
-                    intent.putExtra("album",albumArrayList.get(getPosition()));
+                    intent.putExtra("album", albumArrayList.get(getPosition()));
                     context.startActivity(intent);
                 }
             });

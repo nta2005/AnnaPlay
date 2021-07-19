@@ -1,12 +1,12 @@
-package com.nta.annaplay.Service;
-//Service gồm những phương thức để tương tác với server (gửi và nhận dữ liệu):
-import com.nta.annaplay.Model.Album;
-import com.nta.annaplay.Model.BaiHat;
-import com.nta.annaplay.Model.ChuDe;
-import com.nta.annaplay.Model.PlayList;
-import com.nta.annaplay.Model.TheLoai;
-import com.nta.annaplay.Model.TheLoaiChuDe;
-import com.nta.annaplay.Model.QuangCao;
+package com.nta.annaplay.service;
+//service gồm những phương thức để tương tác với server (gửi và nhận dữ liệu):
+import com.nta.annaplay.model.Album;
+import com.nta.annaplay.model.BaiHat;
+import com.nta.annaplay.model.ChuDe;
+import com.nta.annaplay.model.PlayList;
+import com.nta.annaplay.model.TheLoai;
+import com.nta.annaplay.model.TheLoaiChuDe;
+import com.nta.annaplay.model.QuangCao;
 
 import java.util.List;
 

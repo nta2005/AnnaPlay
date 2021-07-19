@@ -1,4 +1,4 @@
-package com.nta.annaplay.Fragment;
+package com.nta.annaplay.fragment;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;

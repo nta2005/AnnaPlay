@@ -1,4 +1,4 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.BaiHatActivity;
-import com.nta.annaplay.Model.TheLoai;
+import com.nta.annaplay.activity.BaiHatActivity;
+import com.nta.annaplay.model.TheLoai;
 import com.nta.annaplay.R;
 import com.squareup.picasso.Picasso;
 

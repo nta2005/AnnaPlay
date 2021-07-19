@@ -1,4 +1,4 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,14 +10,14 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.TheLoaiChuDeActivity;
-import com.nta.annaplay.Model.ChuDe;
+import com.nta.annaplay.activity.TheLoaiChuDeActivity;
+import com.nta.annaplay.model.ChuDe;
 import com.nta.annaplay.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ChuDeAdapter extends RecyclerView.Adapter<ChuDeAdapter.ViewHolder>{
+public class ChuDeAdapter extends RecyclerView.Adapter<ChuDeAdapter.ViewHolder> {
 
     Context context;
     ArrayList<ChuDe> mangchude;
@@ -31,7 +31,7 @@ public class ChuDeAdapter extends RecyclerView.Adapter<ChuDeAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.dong_cac_chu_de,parent,false);
+        View view = inflater.inflate(R.layout.dong_cac_chu_de, parent, false);
         return new ViewHolder(view);
     }
 
@@ -43,11 +43,15 @@ public class ChuDeAdapter extends RecyclerView.Adapter<ChuDeAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return mangchude.size();
+        if (mangchude == null)
+            return 0;
+        else
+            return mangchude.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgchude;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgchude = itemView.findViewById(R.id.imageviewdongcacchude);
@@ -55,7 +59,7 @@ public class ChuDeAdapter extends RecyclerView.Adapter<ChuDeAdapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, TheLoaiChuDeActivity.class);
-                    intent.putExtra("chude",mangchude.get(getPosition()));
+                    intent.putExtra("chude", mangchude.get(getPosition()));
                     context.startActivity(intent);
                 }
             });

@@ -1,4 +1,4 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,11 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.PlayNhacActivity;
-import com.nta.annaplay.Model.BaiHat;
+import com.nta.annaplay.activity.PlayNhacActivity;
+import com.nta.annaplay.model.BaiHat;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SearchBaiHatAdapter extends RecyclerView.Adapter<SearchBaiHatAdapter.ViewHolder>{
+public class SearchBaiHatAdapter extends RecyclerView.Adapter<SearchBaiHatAdapter.ViewHolder> {
 
     Context context;
     ArrayList<BaiHat> mangbaihat;
@@ -39,7 +39,7 @@ public class SearchBaiHatAdapter extends RecyclerView.Adapter<SearchBaiHatAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.dong_search_baihat,parent,false);
+        View view = inflater.inflate(R.layout.dong_search_baihat, parent, false);
         return new ViewHolder(view);
     }
 
@@ -53,11 +53,14 @@ public class SearchBaiHatAdapter extends RecyclerView.Adapter<SearchBaiHatAdapte
 
     @Override
     public int getItemCount() {
-        return mangbaihat.size();
+        if (mangbaihat == null)
+            return 0;
+        else
+            return mangbaihat.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView txtTenbaihat,txtTencasi;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView txtTenbaihat, txtTencasi;
         ImageView imgbaihat, imgluotthich;
 
         public ViewHolder(@NonNull View itemView) {
@@ -70,7 +73,7 @@ public class SearchBaiHatAdapter extends RecyclerView.Adapter<SearchBaiHatAdapte
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, PlayNhacActivity.class);
-                    intent.putExtra("cakhuc",mangbaihat.get(getPosition()));
+                    intent.putExtra("cakhuc", mangbaihat.get(getPosition()));
                     context.startActivity(intent);
                 }
             });
@@ -79,14 +82,14 @@ public class SearchBaiHatAdapter extends RecyclerView.Adapter<SearchBaiHatAdapte
                 public void onClick(View v) {
                     imgluotthich.setImageResource(R.drawable.iconloved);
                     DataService dataservice = APIService.getService();
-                    Call<String> callback = dataservice.UpdateLuotThich("1",mangbaihat.get(getPosition()).getIdbaihat());
+                    Call<String> callback = dataservice.UpdateLuotThich("1", mangbaihat.get(getPosition()).getIdbaihat());
                     callback.enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
                             String ketqua = response.body();
-                            if(ketqua == "OK"){
+                            if (ketqua == "OK") {
                                 Toast.makeText(context, "Đã thích!", Toast.LENGTH_SHORT).show();
-                            }else {
+                            } else {
                                 Toast.makeText(context, "Lỗi!!!", Toast.LENGTH_SHORT).show();
                             }
                         }

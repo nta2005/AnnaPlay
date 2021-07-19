@@ -1,4 +1,4 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

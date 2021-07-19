@@ -1,4 +1,4 @@
-package com.nta.annaplay.Model;
+package com.nta.annaplay.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

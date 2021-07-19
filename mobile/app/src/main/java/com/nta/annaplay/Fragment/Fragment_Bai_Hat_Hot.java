@@ -1,4 +1,4 @@
-package com.nta.annaplay.Fragment;
+package com.nta.annaplay.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Adapter.BaiHatHotAdapter;
-import com.nta.annaplay.Model.BaiHat;
+import com.nta.annaplay.adapter.BaiHatHotAdapter;
+import com.nta.annaplay.model.BaiHat;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.nta.annaplay.Activity;
+package com.nta.annaplay.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,12 +10,12 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 
-import com.nta.annaplay.Adapter.TheLoaiChuDeAdapter;
-import com.nta.annaplay.Model.ChuDe;
-import com.nta.annaplay.Model.TheLoai;
+import com.nta.annaplay.adapter.TheLoaiChuDeAdapter;
+import com.nta.annaplay.model.ChuDe;
+import com.nta.annaplay.model.TheLoai;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 
 import java.util.ArrayList;
 import java.util.List;

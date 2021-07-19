@@ -1,4 +1,4 @@
-package com.nta.annaplay.Activity;
+package com.nta.annaplay.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.os.StrictMode;
 
 import com.google.android.material.tabs.TabLayout;
-import com.nta.annaplay.Adapter.MainViewPagerAdapter;
-import com.nta.annaplay.Fragment.Fragment_Home;
-import com.nta.annaplay.Fragment.Fragment_Search;
+import com.nta.annaplay.adapter.MainViewPagerAdapter;
+import com.nta.annaplay.fragment.Fragment_Home;
+import com.nta.annaplay.fragment.Fragment_Search;
 import com.nta.annaplay.R;
 
 public class MainActivity extends AppCompatActivity {

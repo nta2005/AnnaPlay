@@ -1,5 +1,5 @@
-package com.nta.annaplay.Adapter;
-//Adapter thiết kế giao diện playlist:
+package com.nta.annaplay.adapter;
+//adapter thiết kế giao diện playlist:
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.nta.annaplay.Model.PlayList;
+import com.nta.annaplay.model.PlayList;
 import com.nta.annaplay.R;
 import com.squareup.picasso.Picasso;
 

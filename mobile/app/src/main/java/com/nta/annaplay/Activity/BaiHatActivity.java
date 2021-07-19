@@ -1,4 +1,4 @@
-package com.nta.annaplay.Activity;
+package com.nta.annaplay.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -18,15 +18,15 @@ import android.widget.ImageView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.nta.annaplay.Adapter.BaiHatAdapter;
-import com.nta.annaplay.Model.Album;
-import com.nta.annaplay.Model.BaiHat;
-import com.nta.annaplay.Model.PlayList;
-import com.nta.annaplay.Model.QuangCao;
-import com.nta.annaplay.Model.TheLoai;
+import com.nta.annaplay.adapter.BaiHatAdapter;
+import com.nta.annaplay.model.Album;
+import com.nta.annaplay.model.BaiHat;
+import com.nta.annaplay.model.PlayList;
+import com.nta.annaplay.model.QuangCao;
+import com.nta.annaplay.model.TheLoai;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;

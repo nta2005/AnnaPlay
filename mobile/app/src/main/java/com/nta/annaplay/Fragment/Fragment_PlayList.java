@@ -1,4 +1,4 @@
-package com.nta.annaplay.Fragment;
+package com.nta.annaplay.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,13 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.nta.annaplay.Activity.BaiHatActivity;
-import com.nta.annaplay.Activity.PlayListActivity;
-import com.nta.annaplay.Adapter.PlayListAdapter;
-import com.nta.annaplay.Model.PlayList;
+import com.nta.annaplay.activity.BaiHatActivity;
+import com.nta.annaplay.activity.PlayListActivity;
+import com.nta.annaplay.adapter.PlayListAdapter;
+import com.nta.annaplay.model.PlayList;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,16 +64,16 @@ public class Fragment_PlayList extends Fragment {
             public void onResponse(Call<List<PlayList>> call, Response<List<PlayList>> response) {
                 mangplaylist = (ArrayList<PlayList>) response.body();
                 playlistAdapter = new PlayListAdapter(getActivity(),android.R.layout.simple_list_item_1,mangplaylist);
-                lvplaylist.setAdapter(playlistAdapter);
+                if(mangplaylist != null){
+                    lvplaylist.setAdapter(playlistAdapter);
+                }
+
                 //Căn chỉnh lại kích thước playlist:
                 setListViewHeightBasedOnChildren(lvplaylist);
-                lvplaylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent = new Intent(getActivity(), BaiHatActivity.class);
-                        intent.putExtra("itemplaylist",mangplaylist.get(position));
-                        startActivity(intent);
-                    }
+                lvplaylist.setOnItemClickListener((parent, view, position, id) -> {
+                    Intent intent = new Intent(getActivity(), BaiHatActivity.class);
+                    intent.putExtra("itemplaylist",mangplaylist.get(position));
+                    startActivity(intent);
                 });
             }
             //Lắng nghe cho việc dữ liệu trả về thất bại:

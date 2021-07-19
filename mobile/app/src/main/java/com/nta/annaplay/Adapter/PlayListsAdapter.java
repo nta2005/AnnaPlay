@@ -1,4 +1,4 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,14 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.BaiHatActivity;
-import com.nta.annaplay.Model.PlayList;
+import com.nta.annaplay.activity.BaiHatActivity;
+import com.nta.annaplay.model.PlayList;
 import com.nta.annaplay.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class PlayListsAdapter extends RecyclerView.Adapter<PlayListsAdapter.ViewHolder>{
+public class PlayListsAdapter extends RecyclerView.Adapter<PlayListsAdapter.ViewHolder> {
 
     Context context;
     ArrayList<PlayList> mangplaylist;
@@ -32,7 +32,7 @@ public class PlayListsAdapter extends RecyclerView.Adapter<PlayListsAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.dong_danh_sach_cac_playlist,parent,false);
+        View view = inflater.inflate(R.layout.dong_danh_sach_cac_playlist, parent, false);
         return new ViewHolder(view);
     }
 
@@ -45,24 +45,25 @@ public class PlayListsAdapter extends RecyclerView.Adapter<PlayListsAdapter.View
 
     @Override
     public int getItemCount() {
-        return mangplaylist.size();
+        if (mangplaylist == null)
+            return 0;
+        else
+            return mangplaylist.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imghinhnen;
         TextView txttenplaylist;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imghinhnen = itemView.findViewById(R.id.imageviewdanhsachcacplaylist);
             txttenplaylist = itemView.findViewById(R.id.textviewtendanhsachcacplaylist);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, BaiHatActivity.class);
-                    intent.putExtra("itemplaylist",mangplaylist.get(getPosition()));
-                    context.startActivity(intent);
-                }
+            itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(context, BaiHatActivity.class);
+                intent.putExtra("itemplaylist", mangplaylist.get(getPosition()));
+                context.startActivity(intent);
             });
 
         }

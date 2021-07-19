@@ -1,4 +1,4 @@
-package com.nta.annaplay.Adapter;
+package com.nta.annaplay.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,11 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.PlayNhacActivity;
-import com.nta.annaplay.Model.BaiHat;
+import com.nta.annaplay.activity.PlayNhacActivity;
+import com.nta.annaplay.model.BaiHat;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BaiHatHotAdapter extends RecyclerView.Adapter<BaiHatHotAdapter.ViewHolder>{
+public class BaiHatHotAdapter extends RecyclerView.Adapter<BaiHatHotAdapter.ViewHolder> {
     Context context;
     ArrayList<BaiHat> mangbaihathot;
 
@@ -38,7 +38,7 @@ public class BaiHatHotAdapter extends RecyclerView.Adapter<BaiHatHotAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.dong_bai_hat_hot,parent,false);
+        View view = inflater.inflate(R.layout.dong_bai_hat_hot, parent, false);
 
         return new ViewHolder(view);
     }
@@ -53,12 +53,16 @@ public class BaiHatHotAdapter extends RecyclerView.Adapter<BaiHatHotAdapter.View
 
     @Override
     public int getItemCount() {
-        return mangbaihathot.size();
+        if (mangbaihathot == null)
+            return 0;
+        else
+            return mangbaihathot.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtten,txtcasi;
-        ImageView imghinh,imgluotthich;
+        TextView txtten, txtcasi;
+        ImageView imghinh, imgluotthich;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtten = itemView.findViewById(R.id.textviewbaihathot);
@@ -70,7 +74,7 @@ public class BaiHatHotAdapter extends RecyclerView.Adapter<BaiHatHotAdapter.View
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, PlayNhacActivity.class);
-                    intent.putExtra("cakhuc",mangbaihathot.get(getPosition()));
+                    intent.putExtra("cakhuc", mangbaihathot.get(getPosition()));
                     context.startActivity(intent);
                 }
             });
@@ -80,14 +84,14 @@ public class BaiHatHotAdapter extends RecyclerView.Adapter<BaiHatHotAdapter.View
                 public void onClick(View v) {
                     imgluotthich.setImageResource(R.drawable.iconloved);
                     DataService dataservice = APIService.getService();
-                    Call<String> callback = dataservice.UpdateLuotThich("1",mangbaihathot.get(getPosition()).getIdbaihat());
+                    Call<String> callback = dataservice.UpdateLuotThich("1", mangbaihathot.get(getPosition()).getIdbaihat());
                     callback.enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
                             String ketqua = response.body();
-                            if(ketqua.equals("OK")){
+                            if (ketqua.equals("OK")) {
                                 Toast.makeText(context, "Đã thích!", Toast.LENGTH_SHORT).show();
-                            }else {
+                            } else {
                                 Toast.makeText(context, "Lỗi!!!", Toast.LENGTH_SHORT).show();
                             }
                         }

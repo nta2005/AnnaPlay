@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.PlayListActivity">
+    tools:context=".activity.PlayListActivity">
 
     <androidx.appcompat.widget.Toolbar
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"

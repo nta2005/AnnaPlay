@@ -1,5 +1,5 @@
-package com.nta.annaplay.Adapter;
-//Adapter thiết kế giao diện danh sách bài hát:
+package com.nta.annaplay.adapter;
+//adapter thiết kế giao diện danh sách bài hát:
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -12,11 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nta.annaplay.Activity.PlayNhacActivity;
-import com.nta.annaplay.Model.BaiHat;
+import com.nta.annaplay.activity.PlayNhacActivity;
+import com.nta.annaplay.model.BaiHat;
 import com.nta.annaplay.R;
-import com.nta.annaplay.Service.APIService;
-import com.nta.annaplay.Service.DataService;
+import com.nta.annaplay.service.APIService;
+import com.nta.annaplay.service.DataService;
 
 import java.util.ArrayList;
 
